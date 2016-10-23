@@ -1,0 +1,1 @@
+document.getElementById("updateimage").innerHTML = "<img src='images/red.jpg'>";

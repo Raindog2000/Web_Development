@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- Phillip Rooney - R00107018 -->
+
+<html lang="en">
+
+	<head>
+		<meta charset = "utf-8">
+		<title>Mugs'R'Us</title>
+		<link rel="stylesheet" href="css/style.css"/>
+		<script type="text/javascript" src="calculate.js"></script>
+		</head>
+
+	<body>
+
+		<H1><strong><em>Mugs'R'Us</em> - the internets best priced mugs</strong></H1>
+		
+		<form method="post">
+			<H2><strong>Order Form</strong></H2>
+			<fieldset>
+				<legend>Please enter your <em>personal details</em></legend>
+					<p>
+						<label>First Name:</label>
+						<input autocomplete="on" type="text" name="firstName" placeholder="First Name" required>
+					</P>
+
+					<p>
+						<label>Last Name:</label>
+						<input autocomplete="on" type="text" name="lastName" placeholder="Last Name" required>
+					</P>
+
+					<P>
+						<label>Email address</label>
+						<input required autocomplete="on" type="email" placeholder="Joe.Bloggs@gmail.com" name="email">
+					</p>			
+			</fieldset>
+
+			<br/>
+
+			<fieldset>
+				<legend>Select your <em>Mug Colour</em></legend>
+					<p>
+						<input id="redMug" name="colour" type="radio" value="red" onchange='newImage(this.id)' required>Red
+						<input id="purpleMug" name="colour" type="radio" value="purple" onchange='newImage(this.id)' >Purple
+						<input id="limeMug" name="colour" type="radio" value="lime" onchange='newImage(this.id)' >Lime
+						<input id="blackMug" name="colour" type="radio" value="black" onchange='newImage(this.id)' >Black
+						<input id="tealMug" name="colour" type="radio" value="teal" onchange='newImage(this.id)' >Teal
+					</p>
+
+					<div id="updateimage"></div>
+					
+					<script type="text/javascript">
+					function newImage(x){var colour = document.getElementById(x).value;
+						switch(colour){
+				        case "red":
+				        	document.getElementById("updateimage").innerHTML = "<img src='images/red.jpg'>";
+				        break;
+				        case "purple":
+				        	document.getElementById("updateimage").innerHTML = "<img src='images/purple.jpg'>";
+				        break;
+				        case "lime":
+				          	document.getElementById("updateimage").innerHTML = "<img src='images/lime.jpg'>";
+				        break;
+				        case "black":
+				          	document.getElementById("updateimage").innerHTML = "<img src='images/black.jpg'>";
+				        break;
+				        case "teal":
+				          	document.getElementById("updateimage").innerHTML = "<img src='images/teal.jpg'>";
+				        break;
+				    	}
+					}
+					</script>					
+
+			</fieldset>
+
+			<br/>
+
+			<fieldset>
+				<legend>What <em>size</em> mug would you like?</legend>
+					<p>
+						<input class="mugSize" name="size" type="radio" value="small" required>Small €9.99
+						<input class="mugSize" name="size" type="radio" value="medium">Medium €12.99
+						<input class="mugSize" name="size" type="radio" value="large">Large €14.99
+						<input class="mugSize" name="size" type="radio" value="exlge">Extra Large €15.99
+					</p>
+			</fieldset>
+
+			<br/>
+
+			<fieldset>
+				<legend>Available <em>Upgrades</em></legend>
+					<p>
+						<input class="mugUpgrade" name="upgrade" type="radio" value="noUp" checked>None
+						<input class="mugUpgrade" name="upgrade" type="radio" value="base">Transparent Base €3.00
+						<input class="mugUpgrade" name="upgrade" type="radio" value="thermos">Thermos €7.00
+						<input class="mugUpgrade" name="upgrade" type="radio" value="logo">Upload your logo €6.00
+						<input class="mugUpgrade" name="upgrade" type="radio" value="initials">Engraved initials €2.00
+					</p>
+			</fieldset>
+
+			<br/>
+
+			<fieldset>
+				<legend>Available <em>Add-Ons</em></legend>
+					<p>
+						<input class="mugAdd" name="addons" type="radio" value="noAdd" checked>None
+						<input class="mugAdd" name="addons" type="radio" value="hot">Hot Plate €15.00
+						<input class="mugAdd" name="addons" type="radio" value="lid">Mug Lid €3.00
+						<input class="mugAdd" name="addons" type="radio" value="cord">Mug pull-cord €6.00
+					</p>
+			</fieldset>
+
+			<br/>
+
+			<fieldset>
+				<legend>Please choose from some of our <em>Supplier Specific</em> options</legend>
+					<p>
+						<input class="mugOpts" name="options" type="radio" value="noOpt" checked>None
+						<input class="mugOpts" name="options" type="radio" value="coffee">1kg coffee €15.00
+						<input class="mugOpts" name="options" type="radio" value="milk">Condensed Milk €3.00
+						<input class="mugOpts" name="options" type="radio" value="tea">1,000 Tea Bags €6.00
+					</p>
+			</fieldset>
+
+			<p>
+				<button type="submit">
+					<img src="images/Submit.jpg" alt="Click to send" width="48" height="48" />
+					<br/>
+					Click to Send
+				</button>
+
+				<button type="Reset">
+					<img src="images/Reset.jpg" alt="Click to Reset" width="48" height="48" />
+					<br/>
+					Click to Reset
+				</button>
+			</P>
+		
+
+		</form>
+
+    </body>
+
+</html>
