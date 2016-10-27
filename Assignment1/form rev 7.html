@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- Phillip Rooney - R00107018 -->
+
+<html lang="en">
+
+	<head>
+		<meta charset = "utf-8">
+		<title>Mugs'R'Us</title>
+		<link rel="stylesheet" href="css/style.css"/>
+		<script type="text/javascript" src="js/calculate.js"></script>
+	</head>
+
+	<body>
+
+		<H1><strong><em>Mugs'R'Us</em> - the internets best priced mugs</strong></H1>
+		
+		<form name="orderForm" action="http://atlantis.cit.ie/displayvalues.php" method="post" onSubmit="return checkPrice();"><!-- onSubmit="return checkPrice();" -->
+			<H2><strong>Order Form</strong></H2>
+			<fieldset>
+				<legend>Please enter your <em>personal details</em></legend>
+					<p>
+						<label>First Name:</label>
+						<input autocomplete="on" type="text" name="firstName" placeholder="First Name" required>
+					</P>
+
+					<p>
+						<label>Last Name:</label>
+						<input autocomplete="on" type="text" name="lastName" placeholder="Last Name" required>
+					</P>
+
+					<P>
+						<label>Email address</label>
+						<input required autocomplete="on" type="email" placeholder="Joe.Bloggs@gmail.com" name="email">
+					</p>			
+			</fieldset>
+
+			<br/>
+
+			<fieldset>
+				<legend>Select your <em>Mug Colour</em></legend>
+					<p>
+						<input id="redMug" name="colour" type="radio" value="Red" onchange='newImage(this.id)' required>Red
+						<input id="purpleMug" name="colour" type="radio" value="Purple" onchange='newImage(this.id)' >Purple
+						<input id="limeMug" name="colour" type="radio" value="Lime" onchange='newImage(this.id)' >Lime
+						<input id="blackMug" name="colour" type="radio" value="Black" onchange='newImage(this.id)' >Black
+						<input id="tealMug" name="colour" type="radio" value="Teal" onchange='newImage(this.id)' >Teal
+					</p>
+
+					<div id="updateimage"></div>
+					
+			</fieldset>
+
+			<br/>
+
+			<fieldset>
+				<legend>What <em>size</em> mug would you like?</legend>
+					<p>
+						<input id="sSize" name="size" type="radio" value="Small" onchange='setSize(this.id)' required>Small €9.99
+						<input id="mSize" name="size" type="radio" value="Medium" onchange='setSize(this.id)'>Medium €12.99
+						<input id="lSize" name="size" type="radio" value="Large" onchange='setSize(this.id)'>Large €14.99
+						<input id="xlSize" name="size" type="radio" value="Exlge" onchange='setSize(this.id)'>Extra Large €15.99
+					</p>
+			</fieldset>
+
+			<br/>
+
+			<fieldset>
+				<legend>Available <em>Upgrades</em></legend>
+					<p>
+						<input id="noUp" name="upgrade" type="radio" value="no_Upgrade" onchange='setUp(this.id)' checked>None <!-- choose to pre-check as opposed to setting as required -->
+						<input id="baseUp" name="upgrade" type="radio" value="Trans_Base" onchange='setUp(this.id)'>Transparent Base €3.00
+						<input id="therUp" name="upgrade" type="radio" value="Thermos" onchange='setUp(this.id)'>Thermos €7.00
+						<input id="logUp" name="upgrade" type="radio" value="Upload_Logo" onchange='setUp(this.id)'>Upload your logo €6.00
+						<input id="initUp" name="upgrade" type="radio" value="Eng_Initials" onchange='setUp(this.id)'>Engraved initials €2.00
+					</p>
+			</fieldset>
+
+			<br/>
+
+			<fieldset>
+				<legend>Available <em>Add-Ons</em></legend>
+					<p>
+						<input id="noAdd" name="addons" type="radio" value="no_Addons" onchange='setAdd(this.id)' checked>None
+						<input id="hotAdd" name="addons" type="radio" value="Hot_Plate" onchange='setAdd(this.id)' >Hot Plate €15.00
+						<input id="lidAdd" name="addons" type="radio" value="Mug_Lid" onchange='setAdd(this.id)' >Mug Lid €3.00
+						<input id="cordAdd" name="addons" type="radio" value="Pull_Cord" onchange='setAdd(this.id)' >Mug pull-cord €6.00
+					</p>
+			</fieldset>
+
+			<br/>
+
+			<fieldset>
+				<legend>Please choose from some of our <em>Supplier Specific</em> options</legend>
+					<p>
+						<input id="noOpts" name="options" type="radio" value="no_Options" onchange='setOpt(this.id)' checked>None
+						<input id="coffOpts" name="options" type="radio" value="Coffee" onchange='setOpt(this.id)' >1kg coffee €15.00
+						<input id="milkOpts" name="options" type="radio" value="Cond_Milk" onchange='setOpt(this.id)' >Condensed Milk €3.00
+						<input id="teaOpts" name="options" type="radio" value="Tea_Bags" onchange='setOpt(this.id)' >1,000 Tea Bags €6.00
+					</p>
+			</fieldset>
+
+			<br/>
+
+			<fieldset>	
+				<p>
+					<button type="button" class="calcTotal" onClick="totalPrice()">Calculate Total</button><!-- took out onClick="totalPrice()" to add event listener but didn't work -->
+					<label>Total Price: € </label>
+					<input Name="Total_Price" type="text" id="getCost" readonly>
+				</p>
+			</fieldset>
+
+			<p>
+				<button type="submit">
+					<img src="images/Order.jpg" alt="Click to Submit" width="150" height="74"/>
+				</button>
+
+				<button type="reset">
+					<img src="images/Cancel.jpg" alt="Click to Reset" width="150" height="74"/>
+				</button>
+
+		</form>
+
+		<footer>
+			<details>
+				<summary>Assignment details</summary>
+					<p><small>Assignment 1 - Phillip Rooney - R00107018 - Date submitted 29th Oct 2016</small></p>
+			</details> 
+		</footer>
+
+    </body>
+
+</html>
